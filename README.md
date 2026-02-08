@@ -1,3 +1,10 @@
+
+
+<img width="1536" height="1024" alt="vpc" src="https://github.com/user-attachments/assets/d3a43f47-cf5c-4178-a0de-68467fb11dd5" />
+
+
+
+
 # VotingApp
 A full-stack voting application that allows users to cast votes on different options and view real-time results. This project demonstrates the integration of Java (JSP/Servlets) with a MySQL database, providing a clean example of a CRUD-based web application.
 
