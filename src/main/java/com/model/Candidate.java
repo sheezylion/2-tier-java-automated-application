@@ -16,21 +16,15 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Candidate {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	@Column(unique = true)
-	private String candidate;
-	private int votes;
-	
-	
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+
+    private String candidate;
+    private int votes;
 }

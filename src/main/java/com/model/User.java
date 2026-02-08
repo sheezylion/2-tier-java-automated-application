@@ -16,12 +16,9 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
 	
 	@Id

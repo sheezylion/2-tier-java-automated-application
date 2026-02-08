@@ -1,0 +1,10 @@
+- name: Install Amazon Corretto 11
+  shell: yum install -y java-11-amazon-corretto
+
+- name: Verify Java
+  shell: java -version
+  register: java_check
+  changed_when: false
+
+- debug:
+    var: java_check.stderr

@@ -1,0 +1,9 @@
+- name: Install Python 3.8 on Amazon Linux 2
+  raw: |
+    if ! command -v python3.8 >/dev/null 2>&1; then
+      amazon-linux-extras enable python3.8
+      yum install -y python38
+    fi
+
+- name: Verify Python 3.8
+  raw: /usr/bin/python3.8 --version

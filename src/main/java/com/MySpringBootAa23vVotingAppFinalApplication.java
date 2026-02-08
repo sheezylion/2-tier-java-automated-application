@@ -16,6 +16,7 @@ public class MySpringBootAa23vVotingAppFinalApplication implements CommandLineRu
 	public static void main(String[] args) {
 		SpringApplication.run(MySpringBootAa23vVotingAppFinalApplication.class, args);
 	}
+
 	
 	@Autowired
 	private UserRepository userRepo;

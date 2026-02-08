@@ -1,0 +1,6 @@
+---
+- name: Update system packages
+  shell: yum update -y
+
+- name: Install basic utilities
+  shell: yum install -y git wget curl unzip
