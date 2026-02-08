@@ -1,6 +1,5 @@
-############################################
+
 # EC2 ROLE
-############################################
 
 resource "aws_iam_role" "ec2" {
   name = "${var.project_name}-${var.environment}-ec2-role"
@@ -15,18 +14,15 @@ resource "aws_iam_role" "ec2" {
   })
 }
 
-############################################
 # SSM ACCESS
-############################################
+
 
 resource "aws_iam_role_policy_attachment" "ssm" {
   role       = aws_iam_role.ec2.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
 }
 
-############################################
-# SECRETS MANAGER READ
-############################################
+# SECRETS MANAGER ACCESS
 
 resource "aws_iam_policy" "secrets_read" {
   name = "${var.project_name}-${var.environment}-secrets-read"
@@ -46,9 +42,8 @@ resource "aws_iam_role_policy_attachment" "secrets" {
   policy_arn = aws_iam_policy.secrets_read.arn
 }
 
-############################################
+
 # EC2 DOWNLOAD ARTIFACTS
-############################################
 
 resource "aws_iam_policy" "artifact_read" {
   name = "${var.project_name}-${var.environment}-artifact-read"
@@ -68,18 +63,14 @@ resource "aws_iam_role_policy_attachment" "artifact_read" {
   policy_arn = aws_iam_policy.artifact_read.arn
 }
 
-############################################
 # INSTANCE PROFILE
-############################################
 
 resource "aws_iam_instance_profile" "this" {
   name = "${var.project_name}-${var.environment}-instance-profile"
   role = aws_iam_role.ec2.name
 }
 
-############################################
 # GITHUB USER
-############################################
 
 resource "aws_iam_user" "github" {
   name = "${var.project_name}-${var.environment}-github"
