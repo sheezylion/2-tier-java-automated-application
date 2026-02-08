@@ -17,8 +17,11 @@
     <groupId>com</groupId>
     <artifactId>MySpring_Boot_aa23v_VotingApp_Final</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>MySpring_Boot_aa23v_VotingApp_Final</name>
+    <name>Voting App</name>
     <description>Voting App</description>
+
+    <!-- ⭐ IMPORTANT -->
+    <packaging>war</packaging>
 
     <properties>
         <java.version>11</java.version>
@@ -26,10 +29,23 @@
 
     <dependencies>
 
-        <!-- Web -->
+        <!-- Web WITHOUT embedded Tomcat -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- External Tomcat will provide this -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Thymeleaf -->
@@ -50,7 +66,7 @@
             <artifactId>spring-boot-starter-data-jdbc</artifactId>
         </dependency>
 
-        <!-- Validation (version managed by Spring Boot) -->
+        <!-- Validation -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
@@ -62,14 +78,14 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
-        <!-- MySQL Driver -->
+        <!-- MySQL -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.29</version>
         </dependency>
 
-        <!-- Lombok (CORRECTLY CONFIGURED) -->
+        <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -85,7 +101,7 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Testing -->
+        <!-- Tests -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -97,13 +113,16 @@
     <build>
         <plugins>
 
-            <!-- Spring Boot Plugin -->
-           
+            <!-- Creates executable WAR -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
 
-            <!-- Maven Compiler Plugin (REQUIRED FOR LOMBOK) -->
+            <!-- Lombok Compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
+                <artifactId>maven-compiler-plugin</artifact_id>
                 <version>3.8.1</version>
                 <configuration>
                     <source>11</source>
