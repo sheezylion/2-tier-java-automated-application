@@ -32,8 +32,3 @@ jobs:
       - name: Upload WAR to S3
         run: |
           aws s3 cp target/*.war s3://votingapp-artifacts-dev-12345/app.war
-
-      - name: Run Ansible deploy
-        run: |
-          cd ansible
-          ansible-playbook playbook.yml --tags deploy
