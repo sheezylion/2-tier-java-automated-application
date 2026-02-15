@@ -1,36 +1,32 @@
-
-
 <img width="1144" height="747" alt="vpc" src="https://github.com/user-attachments/assets/359da4b1-44ec-4477-80fe-225b7d3d5d73" />
 
-
-
-
 # VotingApp
+
 A full-stack voting application that allows users to cast votes on different options and view real-time results. This project demonstrates the integration of Java (JSP/Servlets) with a MySQL database, providing a clean example of a CRUD-based web application.
 
 ---
 
-## 🚀 Features  
+## 🚀 Features
 
-- ✅ User-friendly voting interface  
-- ✅ Admin panel to manage polls & results  
-- ✅ Real-time vote counting and display  
-- ✅ Secure database storage with MySQL  
-- ✅ Modular JSP pages with reusable header & footer  
+- ✅ User-friendly voting interface
+- ✅ Admin panel to manage polls & results
+- ✅ Real-time vote counting and display
+- ✅ Secure database storage with MySQL
+- ✅ Modular JSP pages with reusable header & footer
 - ✅ Responsive UI with Bootstrap
 
 ---
 
-## 🛠️ Tech Stack  
+## 🛠️ Tech Stack
 
-- **Frontend:** JSP, HTML5, CSS3, Bootstrap  
-- **Backend:** Java Servlets, JSP  
-- **Database:** MySQL  
+- **Frontend:** JSP, HTML5, CSS3, Bootstrap
+- **Backend:** Java Servlets, JSP
+- **Database:** MySQL
 - **Server:** Apache Tomcat
 
 ---
 
-## 📂 Project Structure  
+## 📂 Project Structure
 
 VotingApp/
 │── src/ # Java source files (Servlets, Database connection)
@@ -43,30 +39,34 @@ VotingApp/
 │── lib/ # Dependencies (MySQL Connector, etc.)
 └── README.md # Project documentation
 
-
 ---
 
-## ⚙️ Installation & Setup  
+## ⚙️ Installation & Setup
 
-### 1️⃣ Clone the repository  
+### 1️⃣ Clone the repository
+
 ```bash
 git clone https://github.com/iamvikash28/VotingApp.git
 cd VotingApp
 ```
 
 2️⃣ Import into IDE
+
 - Open Eclipse / IntelliJ
 - Select Import as Dynamic Web Project
 - Configure Apache Tomcat as your server
 
 3️⃣ Setup MySQL Database
+
 - Create a new database:
+
 ```bash
 CREATE DATABASE votingapp;
 ```
 
 - Import tables from sql/votingapp.sql
 - Update your DB credentials in DBConnection.java:
+
 ```bash
 private static final String URL = "jdbc:mysql://localhost:3306/votingapp";
 private static final String USER = "root";
@@ -77,6 +77,7 @@ private static final String PASSWORD = "your_password";
 
 - Deploy on Tomcat server
 - Open in browser:
+
 ```bash
 http://localhost:8080/VotingApp
 ```
@@ -86,16 +87,19 @@ http://localhost:8080/VotingApp
 🎯 Usage
 
 👤 User:
+
 - View categories of polls
 - Cast votes
 - See live results
 
 🛠️ Admin:
+
 - Add new categories
 - Manage polls
 - View statistics
 
 ---
+
 📌 Future Enhancements
 
 - 🔐 User authentication & login system
@@ -104,7 +108,9 @@ http://localhost:8080/VotingApp
 - 📱 Mobile-friendly responsive UI
 
 ---
+
 🤝 Contributing
+
 - Fork the repo
 - Create a new branch (feature/your-feature)
 - Commit your changes
@@ -116,3 +122,4 @@ http://localhost:8080/VotingApp
 📄 License
 
 This project is licensed under the MIT License – feel free to use and modify.
+Added new statement to Readme.MD
