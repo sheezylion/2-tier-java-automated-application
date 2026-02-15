@@ -46,10 +46,14 @@
 - name: Reload systemd
   shell: systemctl daemon-reload
 
-- name: Start tomcat
-  service:
+- name: Enable Tomcat
+  systemd:
+    name: tomcat
+    enabled: yes
+
+- name: Start Tomcat
+  systemd:
     name: tomcat
     state: started
-    enabled: yes
 
 - include_tasks: deploy.yml

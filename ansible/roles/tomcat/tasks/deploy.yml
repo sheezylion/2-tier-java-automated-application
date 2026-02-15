@@ -1,8 +1,7 @@
 - name: Download WAR from S3
-  command: >
-    aws s3 cp s3://votingapp-artifacts-dev-12345/app.war
-    /opt/tomcat/webapps/app.war
+  command: aws s3 cp s3://votingapp-artifacts-dev-12345/app.war /opt/tomcat/webapps/app.war
 
 - name: Restart Tomcat
-  shell: |
-    systemctl restart tomcat || /opt/tomcat/bin/shutdown.sh ; /opt/tomcat/bin/startup.sh
+  systemd:
+    name: tomcat
+    state: restarted
