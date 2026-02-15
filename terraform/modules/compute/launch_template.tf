@@ -18,7 +18,7 @@ resource "aws_launch_template" "this" {
     security_groups             = [var.app_sg_id]
   }
 
-#user_data = base64encode(<<-EOF
+# user_data = base64encode(<<-EOF
 #!/bin/bash
 #yum update -y
 #yum install -y python3
