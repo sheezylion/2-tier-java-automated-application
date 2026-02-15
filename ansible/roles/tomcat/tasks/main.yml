@@ -51,3 +51,5 @@
     name: tomcat
     state: started
     enabled: yes
+
+- include_tasks: deploy.yml
