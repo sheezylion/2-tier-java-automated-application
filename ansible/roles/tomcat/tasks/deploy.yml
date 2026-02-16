@@ -1,5 +1,22 @@
-- name: Download WAR from S3
-  command: aws s3 cp s3://votingapp-artifacts-dev-12345/app.war /opt/tomcat/webapps/app.war
+- name: Remove old deployments
+  file:
+    path: "{{ item }}"
+    state: absent
+  loop:
+    - /opt/tomcat/webapps/app
+    - /opt/tomcat/webapps/app.war
+    - /opt/tomcat/webapps/ROOT
+
+- name: Download WAR from S3 as ROOT
+  command: >
+    aws s3 cp s3://votingapp-artifacts-dev-12345/app.war
+    /opt/tomcat/webapps/ROOT.war
+
+- name: Fix ownership
+  file:
+    path: /opt/tomcat/webapps/ROOT.war
+    owner: tomcat
+    group: tomcat
 
 - name: Restart Tomcat
   systemd:
